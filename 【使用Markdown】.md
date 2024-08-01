@@ -24,6 +24,8 @@ ____________________________________
 11. [**<font color=BlueViolet> 有序副标题 </font>**](#有序副标题)
 12. [**<font color=Green> 笔记结尾-返回最上面 </font>**](#笔记结尾-返回最上面)
 12. [**<font color=Magenta> 头文件/源文件 代码 引用 </font>**](#头文件源文件-代码-引用)
+13. [**<font color=orange> 函数颜色 </font>**](#函数颜色)
+14. [**<font color=MediumPurple> 折叠语法 </font>**](#折叠语法)
 ____________________________________
  ## 笔记开头总目录的链接
  ```markdown
@@ -188,6 +190,31 @@ __________________________________________________________________________
 
 ````
 >[返回目录](#font-colororange目录font)
+
+__________________________________________________________________________
+### 函数颜色
+
+**<font face=" " color=orange size=5>PlayerTick </font> **
+
+ ```markdown
+**<font face=" " color=orange size=5>这里是函数名 </font> **
+ ```
+>[返回目录](#font-colororange目录font)
+__________________________________________________________________________
+### 折叠语法
+
+<details> <summary>封面</summary>
+    内容修改这里 ...
+</details>
+
+ ```markdown
+<details> <summary>封面</summary>
+    内容修改这里 ...
+</details>
+ ```
+>[返回目录](#font-colororange目录font)
+__________________________________________________________________________
+
 
 ### [字体颜色参考](https://blog.csdn.net/qq_43732429/article/details/108034518)
 
