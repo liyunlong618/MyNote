@@ -6,16 +6,14 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________
 # <font color=red>处理关键点：</font>
 
-<font face="黑体" color=red size=3>1. 再C++中使用FName插槽名，将武器SK，绑定到角色SK上</font>
+<font face="黑体" color=red size=3>1. 接口Interface的使用（比如权限和纯虚函数） </font>
 
-<font face="黑体" color=red size=3>xxxxxx</font>
-1. 接口Interface的使用（比如权限和纯虚函数）
+<font face="黑体" color=red size=3>2. PlayerController中使用 获取鼠标的位置发射射线，返回结果 的函数（只识别block） </font>
 
-2. PlayerController中使用 获取鼠标的位置发射射线，返回结果 的函数（只识别block）
+<font face="黑体" color=red size=3>3. 自定义边缘发光深度材质 生效相关配置（Post Process Volume生效范围/后期处理材质配置） </font>
 
-3. 自定义边缘发光深度材质 生效相关配置（Post Process Volume生效范围/后期处理材质配置）
+<font face="黑体" color=red size=3>4. 在项目文件中定义宏并使用 </font>
 
-4. 在项目文件中定义宏并使用
 ___________________________________________________________________________________________
 
 - 创建C++接口类
