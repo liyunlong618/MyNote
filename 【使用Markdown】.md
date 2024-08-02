@@ -25,17 +25,17 @@ ____________________________________
 
 ## 处理关键点：
  ```markdown
- # <font color=red>处理关键点：</font>
- <font face="黑体" color=red size=3>1. 这里是关键点 </font>
- <font face="黑体" color=red size=3>2. 这里是关键点 </font>
- <font face="黑体" color=red size=3>3. 这里是关键点 </font>
- <font face="黑体" color=red size=3>4. 这里是关键点 </font>
- <font face="黑体" color=red size=3>5. 这里是关键点 </font>
- <font face="黑体" color=red size=3>6. 这里是关键点 </font>
- <font face="黑体" color=red size=3>7. 这里是关键点 </font>
- <font face="黑体" color=red size=3>8. 这里是关键点 </font>
- <font face="黑体" color=red size=3>9. 这里是关键点 </font>
- <font face="黑体" color=red size=3>10. 这里是关键点 </font>
+## 处理关键点
+<font face="黑体" color=red size=3>1. 这里是关键点 </font>
+<font face="黑体" color=red size=3>2. 这里是关键点 </font>
+<font face="黑体" color=red size=3>3. 这里是关键点 </font>
+<font face="黑体" color=red size=3>4. 这里是关键点 </font>
+<font face="黑体" color=red size=3>5. 这里是关键点 </font>
+<font face="黑体" color=red size=3>6. 这里是关键点 </font>
+<font face="黑体" color=red size=3>7. 这里是关键点 </font>
+<font face="黑体" color=red size=3>8. 这里是关键点 </font>
+<font face="黑体" color=red size=3>9. 这里是关键点 </font>
+<font face="黑体" color=red size=3>10. 这里是关键点 </font>
  ```
 >[返回目录](#个人常用快捷输入)
 __________________________________________________________________________
