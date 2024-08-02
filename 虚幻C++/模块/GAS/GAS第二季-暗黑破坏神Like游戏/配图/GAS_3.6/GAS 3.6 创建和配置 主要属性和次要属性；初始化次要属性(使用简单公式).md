@@ -1,0 +1,66 @@
+# GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)
+- 创建主要属性和次要属性，并打开属性复制
+    - 头文件
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-354941-332773.png)
+    - 源文件
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-867210-489404.png)
+- 初始化次要属性
+    - AAuraCharacterBase 中添加蓝图可配置GE类变量，重构初始化函数，抽象功能
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-751305-49722.png)
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-684318-272959.png)
+    - AAuraCharacterBase 中 `InitAbilityActorInfo()` 函数中调用初始化函数
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-498248-537295.png)
+    - UAuraAttributeSet 的构造中移除多余的属性
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-602699-495173.png)
+    - AbilitySystem/GameplayEffects下的PrimaryAttributes **文件夹改名** 成 **DefaultAttributes**
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-994695-688957.png)
+    - AbilitySystem/GameplayEffects/DefaultAttributes下 **创建GE**
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-772353-819462.png)
+    - 给 **BP_Aura** 配置 次要属性GE
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-628836-702026.png)
+    - 设置次要属性GE
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-905761-566664.png)
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-300828-919720.png)
+- Up的计算公式
+    - **护甲（Armor）：**
+        - 属性 = Coefficient * (Resilience + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-46187-410826.png)
+    - **护甲穿透（Armor Penetration）：**
+        - 属性 = Coefficient * (Resilience + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-685417-764324.png)
+    - **格挡几率（Block Chance）：**
+        - 属性 = Coefficient * (Armor + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-400264-32343.png)
+    - **暴击几率（Critical Hit Chance）：**
+        - 属性 = Coefficient * (Resilience + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-410179-1296.png)
+    - **暴击伤害（Critical Hit Damage）：**
+        - 属性 = Coefficient * (Armor Penetration + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-945351-683502.png)
+    - **暴击抗性（Critical Hit Resistance）：**
+        - 属性 = Coefficient * (Armor + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-241590-660499.png)
+    - **生命值再生（Health Regeneration）：**
+        - 属性 = Coefficient * (Vigor + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-779061-818513.png)
+    - **法力值再生（Mana Regeneration）：**
+        - 属性 = Coefficient * (Intelligence + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-125962-384640.png)
+    - **最大生命值（Max Health）：**
+        - 属性 =Coefficient * (Vigor + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-982467-217346.png)
+    - **最大法力值（Max Mana）：**
+        - 属性 = Coefficient * (Intelligence + Pre) + Post
+        - Coefficient = 0.25，Pre = 2，Post = 6
+        -  ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-752983-440131.png)
+- 运行游戏 此时可以看到设置好的数值 ![图片](./GAS 3.6 创建和配置 主要属性和次要属性；初始化次要属性(使用简单公式)-幕布图片-705193-513961.png)

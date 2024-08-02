@@ -1,0 +1,55 @@
+# GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格
+- <font color=#DC2D1E>**处理关键点：**</font>
+    - <font color=#DC2D1E>**1.**</font> **AuraAttributeSet** <font color=#DC2D1E>**中重写虚函数**</font> <font color=#DC2D1E>`**PreAttributeChange**`</font> <font color=#DC2D1E>**(属性更改前 预处理)限制属性最大最小值**</font>
+    - <font color=#DC2D1E>**2.了解属性更改后处理虚函数**</font> <font color=#DC2D1E>`**PostGameplayEffectExecute**`</font>
+    - <font color=#DC2D1E>**3.实参**</font> <font color=#DC2D1E>`**Data**`</font> <font color=#DC2D1E>**，几乎能拿到所有信息，拿信息**</font>
+    - <font color=#DC2D1E>**4.给GE数值配表**</font>
+- 修改属性 两种方法
+    -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-284403-302695.png)
+    - **属性更改前 预处理**
+        - 在 UAuraAttributeSet 中重写虚函数 `**PreAttributeChange**` **(属性更改前 预处理)** 限制属性最大最小值
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-474346-319493.png)
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-863112-645119.png)
+    - **属性更改后触发(这里只做了解用，这一步不写逻辑)**
+        - 在 UAuraAttributeSet 中重写虚函数 `**PostGameplayEffectExecute**` **(属性更改后触发)** 限制属性最大最小值
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-741502-140490.png)
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-211693-116915.png)
+        - **这个函数的参数Data非常强大，几乎能拿到所有信息**
+- **新建一个函数和结构体** ， **保存** 属性更改后，从PostGameplayEffectExecute函数的参数 **Data** 获得的，有用的 **信息**
+    - 头文件
+        - 创建结构体
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-445639-730038.png)
+        - 创建函数
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-133213-37722.png)
+    - 源文件
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-197308-395917.png)
+- 创建药水的表格
+    - 创建药水的表格
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-675532-693538.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-951247-679919.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-898439-988052.png)
+    - 配置表格
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-848706-669579.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-525573-392949.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-48716-3372.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-40835-41843.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-108094-130640.png)
+    - 测试一下，此时拾取药水，恢复5HP，说明配置表格成功
+    - 为 AAuraEffectActor 添加 物品等级(影响应用效果)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-214283-244082.png)
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-105198-89587.png)
+    - **此物品等级可以为float！！！比如4.75** ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-252261-893626.png)
+    - 蓝图中测试修改物品等级
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-574359-584545.png)
+    - 测试效果
+        - 说明成功了 ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-201473-847215.png) ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-636771-229774.png) ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-286932-916063.png)
+        - 测试完，记得改回来
+            -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-244522-360828.png)
+    - 修改曲线表格名字为 **CT_Potion，** 打算把所有药水的数据都存在这个表格上
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-916719-135802.png)
+    - 增加魔法药水的曲线
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-326861-868984.png)
+    - 为魔法药水配置 曲线表格
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-127554-921527.png)
+    - 测试一下
+        -  ![图片](./GAS 3.0 AttributeSet中限制HP/MP最大最小值；创建药水的表格-幕布图片-625234-335073.png)

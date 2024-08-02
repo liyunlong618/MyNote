@@ -1,0 +1,32 @@
+# GAS 2.7 项目MVC架构
+- <font color=#DC2D1E>**关键点：结构下面是结构梳理：MVC(Model->四大数据PC/PS/ASC/AS；View->AuraUserWidget；Control->WidgetController)+使用发布更新的架构1角色（这里是角色，也可以是别的）初始化时调用HUD，根据配置的class在堆区实例化OverlayWidgetController，传入数据更新OverlayWidgetController中的数据（只在初始化时，创建包含四大数据的结构体，才给OverlayWidgetController传入指针数据，后续自行持有指针）**</font>
+- 架构 概述
+    - **每个UI的集合是Widget，不可能直接从模型Model中获取数据，所以使用一个WidgetController作为中间的数据载体，使用发布更新的架构，不用知道谁接收了数据。而WidgetController的职责就是从Model中获取数据并更新自身数据**
+- 创建WidgetController继承自UObject，并创建保存四大数据的结构体FWidgetControllerParams
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-198357-200801.png)
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-910433-29601.png)
+    - 保存四大数据：PC/PS/ASC/AS
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-159360-503327.png)
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-972716-999014.png)
+        -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-267392-618755.png)
+- **Overlay控制器** : 创建OverlayWidgetController继承自AuraWidgetController
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-668345-685827.png)
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-899904-890616.png)
+- UserWidget中
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-988854-913748.png)
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-434128-4802.png)
+    - **设置并保存WidgetController**
+    - **此时的逻辑结构**
+        -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-989651-714655.png)
+        -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-315785-520915.png)
+- HUD的作用 ![图片](./GAS 2.7 项目MVC架构-幕布图片-435531-608578.png)
+- HUD中
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-247150-756138.png)
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-454497-360153.png)
+- 设置蓝图HUD
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-403915-800792.png)
+- 在角色中通过HUD初始化WidgetController中的结构体，从而完成对WidgetController中数据的初始化
+    -  ![图片](./GAS 2.7 项目MVC架构-幕布图片-494883-232298.png)
+- 关键点：结构
+- 下面是结构梳理：
+- MVC(Model->四大数据PC/PS/ASC/AS；View->AuraUserWidget；Control->WidgetController)+使用发布更新的架构

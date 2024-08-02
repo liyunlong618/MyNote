@@ -1,0 +1,63 @@
+# GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController
+- <font color=#DC2D1E>**处理关键点：**</font>
+    - <font color=#DC2D1E>**1.创建无类型的纯C++类，创建用于管理GameplayTags的结构体FAuraGameplayTags，创建初始化游戏标签函数，私有时声明一个变量，在源文件中定义**</font>
+    - <font color=#DC2D1E>**2.单例类的变量使用（static）**</font>
+    - <font color=#DC2D1E>**3.创建自己的AssetManager类，提换引擎默认的资产管理器，重写虚函数StartInitialLoading，在加载完毕时，添加自己的逻辑（项目中的Config文件夹下的DefaultEngine.ini文件中查找(找不到就添加)设置自建的类型AuraAssetManager）**</font>
+- 1.创建无类型的纯C++类，创建用于管理GameplayTags的结构体 **FAuraGameplayTags** ， **创建初始化游戏标签函数，私有时声明一个变量，在源文件中定义**
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-802460-77893.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-596053-366871.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-799209-561533.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-953658-584676.png)
+    - 当你在头文件中声明一个静态成员变量时,比如 static FAuraGameplayTags GameplayTags;你实际上只是在告诉编译器;"在这个类中，我有一个叫做 GameplayTags 的静态成员变量  但我暂时不会告诉你它的具体定义和内存分配"然后，在源文件中，通过 FAuraGameplayTags FAuraGameplayTags::GameplayTags; 这行代码告诉了编译器：“现在，我要告诉你 GameplayTags 的具体定义和内存分配，它是 FAuraGameplayTags 类型的一个静态成员变量。”这两行代码的意义在于分离了声明和定义。此外，这种做法还可以提高编译速度，这种分离可以防止重复定义的问题，特别是在包含同一个头文件的多个源文件中。因为只有在源文件中，编译器才会实际分配内存给静态成员变量，而在头文件中，只是告诉编译器这个变量的存在，不会实际分配内存。
+- 通过 UGameplayTagsManager 使用 `**UGameplayTagsManager::Get().AddNativeGameplayTag(FName,FString);**` 添加Tag标签
+- 2.创建 **AssetManager** 类的C++类 UAuraAssetManager ， **重写初始加载游戏资源的函数，** 调用初始化GameplayTags的函数
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-418759-722320.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-198251-726101.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-120527-312682.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-791963-197092.png)
+- 项目中的Config文件夹下的DefaultEngine.ini文件中查找(找不到就添加)设置资产管理器AssetManager为上面，自建的类型 UAuraAssetManager
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-958606-299024.png)
+        - 查找 **AssetManager** 有两种情况
+            - 找到了
+                -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-59176-707882.png)
+            - 没找到
+                -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-323771-114295.png)
+                -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-457939-744622.png)
+- 编译后运行引擎
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-646660-228877.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-846060-231399.png)
+- FAuraGameplayTags 的 头文件 中创建标签变量， 源文件 初始化函数中给变量赋值，
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-695621-588334.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-582514-901822.png)
+- ASC组件 UAuraAbilitySystemComponent 的AbilityActorInfoSet()函数中使用引用来保存单例类的引用
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-755815-356736.png)
+- 输出调试信息 ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-779870-331632.png)
+- 这是一个小规范，使用静态函数，最好空两格Tab ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-972169-20137.png)
+- 移除旧标签 ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-121948-397272.png) ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-729964-744717.png)
+- 小测试：制作标签 ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-706856-749456.png)
+    - 自己尝试一下
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-420704-37385.png)
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-906480-993841.png)
+        - 加上备注 ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-969564-213627.png) ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-412252-431319.png)
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-278360-713448.png)
+- 此时可以测试一下，使用Tag，查看是否存在
+    - 在蓝图中
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-905881-338626.png)
+    - C++中
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-538712-610025.png)
+- 3.创建DataAsset资产的C++类，叫 UAttributeInfo
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-379034-478282.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-786853-773488.png)
+- UAttributeInfo 中：1、创建结构体；2、创建数组 保存结构体的信息；3、创建函数 根据传入的Tag标签 在数组中查找 并返回找到的结构体
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-472284-504241.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-286229-921502.png)
+- 在蓝图中继承，创建并配置数据资产
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-265405-179983.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-250741-88823.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-589152-458123.png)
+    -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-566454-427354.png)
+- 小测试：制作WidgetController ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-132689-199278.png)
+    - 自己尝试一下
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-643310-257194.png)
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-560318-991198.png)
+        -  ![图片](./GAS 4.1 创建：1.管理游戏标签结构体;2.自己的资产管理器类;3.创建DataAsset资产；4.制作WidgetController-幕布图片-136558-881004.png)

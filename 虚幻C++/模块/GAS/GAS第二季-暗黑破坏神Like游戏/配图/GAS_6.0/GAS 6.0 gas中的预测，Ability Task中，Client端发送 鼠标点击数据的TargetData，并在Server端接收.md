@@ -1,0 +1,68 @@
+# GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收
+- 处理关键点：
+    - <font color=#DC2D1E>**1.梳理清楚GAS的AbilityTask中TargetData的网络同步，时间差异思路梳理：**</font>
+        - <font color=#DC2D1E>**有两个通信事件：1是ClientActive到ServerActive；1完成后Server绑定委托到目标集；2是Client的TargetData到Server的TargetData**</font>
+        - <font color=#DC2D1E>**若时间顺序为12则没有问题，此时只需要在执行2时检查是否绑定到目标集若绑定说明顺序为12，否则顺序为21**</font>
+    - <font color=#DC2D1E>**2.通信需要发送**</font> <font color=#DC2D1E>`**FGameplayAbilityTargetDataHandle**`</font> <font color=#DC2D1E>**类型数据，如果需要区分数据类型，需要使用从TargetData派生的类，赋值并添加到TargetDataHandle中**</font>
+    - <font color=#DC2D1E>**3.GAS预测，看文档吧，太复杂**</font>
+        - 创建一个 **作用域预测窗口**
+    - <font color=#DC2D1E>**4.服务器接收时回调参数需要为**</font> <font color=#DC2D1E>`**const FGameplayAbilityTargetDataHandle& DataHandle, FGameplayTag ActivationTag**`</font>
+    - <font color=#DC2D1E>**5.服务器接收流程：**</font>
+        - <font color=#DC2D1E>**//1.先获取委托并绑定回调**</font> ，使用API：AbilitySystemComponent.Get()-> <font color=#FFAF38>**AbilityTargetDataSetDelegate获取委托**</font>
+        - <font color=#DC2D1E>**//2.检查目标数据委托是否已绑定**</font> ，使用API：AbilitySystemComponent-> <font color=#FFAF38>**CallReplicatedTargetDataDelegatesIfSet**</font> 返回bool；如果未绑定，使用API： <font color=#FFAF38>**SetWaitingOnRemotePlayerData**</font> <font color=#DC2D1E>**设置等待远程玩家数据**</font>
+        - <font color=#DC2D1E>**//3.回调中**</font> ，执行到这里说明已收到TargetData数据，使用API：AbilitySystemComponent-> <font color=#FFAF38>**ConsumeClientReplicatedTargetData**</font> <font color=#DC2D1E>**消耗客户端发送的目标数据**</font> TargetData(和UI中消耗 **鼠标点击** 类似)；此时检查 <font color=#DC2D1E>**若已绑定多播，广播DataHandle**</font>
+- 3.GAS预测
+    - ^v100^control&utm_term=GAS%E9%A2%84%E6%B5%8B&spm=1018.2226.3001.4187 [https://blog.csdn.net/weixin_45455414/article/details/119884171?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172223990716800172520586%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=172223990716800172520586&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-119884171-null-null.142]("https://blog.csdn.net/weixin_45455414/article/details/119884171?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522172223990716800172520586%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=172223990716800172520586&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-119884171-null-null.142")
+- 视频链接
+    - 【【AI中字】虚幻5C++教程使用GAS制作RPG游戏（一）】 [https://www.bilibili.com/video/BV1JD421E7yC/?p=115&share_source=copy_web&vd_source=ccfefcf8d65f5d070c57cddf34c94047]("https://www.bilibili.com/video/BV1JD421E7yC/?p=115&share_source=copy_web&vd_source=ccfefcf8d65f5d070c57cddf34c94047")
+- Client端 Send Mouse Cursor Data 发送Data
+    - UTargetDataUnderMouse 中创建函数 <font color=#FFAF38>**SendMouseCursorData**</font>
+        - 头文件
+            -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-891325-102475.png)
+        - 源文件
+            - 第一步：创建一个 `**FGameplayAbilityTargetDataHandle**` 类型数据；第二步：调用ASC组件设置Server复制( <font color=#DC2D1E>**若报错记得因头文件**</font> )
+                -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-811042-38952.png)
+                - 第一步解释：因为想要传一个HitResult数据，所以new一个 `**FGameplayAbilityTargetData_SingleTargetHit**` 类型的数据，然后修改其中的HitResult数据，然后把 <font color=#40A8F5>`**FGameplayAbilityTargetData_SingleTargetHit**`</font> 类型的数据加到 `**FGameplayAbilityTargetDataHandle**` 类型 数据中
+                    - 了解用： GameplayAbilityTargetTypes.h 这个文件里有很多 `**FGameplayAbilityTargetData**` 类的数据结构
+                        - 有一些虚函数，可以覆盖
+                        - 还有许多从TargetData派生的类
+                            - **FGameplayAbilityTargetData_ActorArray** ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-480671-485425.png)
+                            - **FGameplayAbilityTargetingLocationInfo** ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-949218-562035.png)
+                            - **FGameplayAbilityTargetDataHandle** ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-569426-221959.png)
+                            - FGameplayAbilityTargetData_SingleTargetHit 目标数据与单次命中结果数据被打包到命中结果中。 ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-783397-236279.png)
+                - 第二步解释：调用ASC组件，设置Server复制( <font color=#DC2D1E>**若报错记得因头文件**</font> )，最后一个参数需要传一个FPredictionKey类型的 ScopedPredictionKey（有限预测窗口，这里是GAS预测相关的技术）
+                    - 最后一个参数：FPredictionKey类型的 ScopedPredictionKey（有限预测窗口，这里是GAS预测相关的技术）这是一个时间窗口，在这段时间内我们在本地所做的一切都将被预测。它是有作用域的，也就是这个函数范围， ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-486895-199755.png)
+    - UTargetDataUnderMouse 的 <font color=#FFAF38>**Active**</font> 函数中，判断是否为本地控制器
+        -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-990165-848812.png)
+        - 是否为本地控制器IsLocallyControlled()和HasAuthority的判断方式
+    - UTargetDataUnderMouse 头文件中，修改广播类型为广播一个 `**FGameplayAbilityTargetDataHandle**` 类型的数据引用
+        -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-245424-547223.png)
+    - UTargetDataUnderMouse 源文件中，若绑定了委托，广播TargetData数据
+        -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-315942-110476.png)
+    - UTargetDataUnderMouse 源文件中，创建一个 **作用域预测窗口**
+        - 在这个函数中，在做任何事情之前先创建一个作用域预测窗口 `**FScopedPredictionWindow**` 类型的数据，向服务器请求，请允许我们在本地做我们正在做的事情。然后服务器在知道时会执行。这就是我们在AbilityTask的函数中可以做出预测的方式
+            -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-516757-895138.png)
+                - 基类 GameplayPrediction.h 文件中，这是一个包含大量注释的文件。这可以帮助你理解预测的工作原理。里面说：当收到新的预测密钥时要在服务器上调用。
+                    - 但我们也看到F范围预测窗口，它说要在调用站点中调用，这将生成一个新的预测密钥，并充当同步点，客户端和服务器之间的密钥。这就是我们可以预测事物的方式。 ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-971638-838371.png)
+- Server端 Receiving Target Data 接收Data
+    - **创建回调函数命名** <font color=#FFAF38>**OnTargetDataReplicatedCallback**</font> **，并在Server端绑定回调，回调参数需要为** `**const FGameplayAbilityTargetDataHandle& DataHandle, FGameplayTag ActivationTag**`
+        -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-809521-178922.png)
+        -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-133792-861878.png)
+    -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-372110-943666.png)
+        - <font color=#DC2D1E>**检测Server端的目标集是否绑定了委托的函数**</font> **：** <font color=#FFAF38>**CallReplicatedTargetDataDelegatesIfSet**</font>
+            - AbilitySystemComponent_Abilities.cpp 中 ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-55581-133199.png)
+    - 回调函数中，( <font color=#DC2D1E>**当接收到复制数据时，此函数将在服务器中被调用!!!**</font> )
+        - 告诉能力系统组件，我们已经收到了数据，所以系统不需要存储它。系统不需要再将其缓存， <font color=#DC2D1E>**调用消耗客户端复制目标数据**</font>
+            -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-255497-959328.png)
+                - AbilitySystemComponent_Abilities.cpp 中 ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-488770-652710.png)
+        - 如果绑定了，广播TargetData数据
+            -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-755264-905687.png)
+- 此时蓝图中使用多播Data数据
+    -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-913650-446150.png)
+- 此时bug点击敌人时会掉线（ <font color=#DC2D1E>**5.3之前的会**</font> ）
+    - 点击敌人时会掉线 ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-608285-412676.png)
+        - 报错信息：无法找到 单目标命中和ScriptStructCache脚本结构缓存 ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-422477-571568.png)
+    - <font color=#DC2D1E>**5.3源码中的注释**</font> ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-412969-528607.png)
+- （ <font color=#DC2D1E>**5.3之前的需要这样设置，5.4以后已经设置完成没有此Bug**</font> ）解决bug：在资产管理器AssetManager中需要初始化GAS系统
+    -  ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-447236-24879.png)
+- 此时gif ![图片](./GAS 6.0 gas中的预测，Ability Task中，Client端发送 鼠标点击数据的TargetData，并在Server端接收-幕布图片-533825-295885.gif)

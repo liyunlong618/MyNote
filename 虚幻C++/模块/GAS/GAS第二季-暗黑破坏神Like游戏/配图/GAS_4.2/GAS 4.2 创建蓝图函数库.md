@@ -1,0 +1,21 @@
+# GAS 4.2 创建蓝图函数库
+- <font color=#DC2D1E>**处理关键点：UFUNCTION(BlueprintPure,Category="AuraAbilitySystemLibrary|WidgetController",meta=(WorldContext="WorldContextObject"))**</font>
+    - <font color=#DC2D1E>**1.UFUNCTION(BlueprintPure)表示该函数可以在蓝图中被调用并且是一个纯函数。**</font>
+    - <font color=#DC2D1E>**2.若形参中 有const UObject* WorldContextObject这个作为世界上下文，上面的宏UFUNCTION(meta=(WorldContext="WorldContextObject"))，可以自动识别函数的世界上下文**</font>
+    - <font color=#DC2D1E>**3.拿数据：PS从PC拿，ASC和AS从PS拿（因为在PS中创建）**</font>
+- 创建蓝图函数库 UAuraAbilitySystemLibrary
+    -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-577386-387501.png)
+    -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-135225-59931.png)
+    - BlueprintPure表示该函数可以在蓝图中被调用并且是一个纯函数。 ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-800750-847072.png)
+    -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-271010-698749.png)
+- 小测试：蓝图函数库中创建一个获取UAttributeMenuWidgetController的全局静态函数(HUD中也要创建获取的函数) ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-289417-487002.png)
+    - 自己试一下
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-787070-394238.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-592694-236280.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-407600-186471.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-375327-530500.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-127919-50697.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-841037-4783.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-800020-449492.png)
+        -  ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-577562-822938.png)
+        - 测试 ![图片](./GAS 4.2 创建蓝图函数库-幕布图片-963221-22014.png)

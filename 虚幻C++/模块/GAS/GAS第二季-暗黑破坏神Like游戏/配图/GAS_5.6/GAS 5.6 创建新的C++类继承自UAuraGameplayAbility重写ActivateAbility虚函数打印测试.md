@@ -1,0 +1,16 @@
+# GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试
+- 视频链接
+    - 【【AI中字】虚幻5C++教程使用GAS制作RPG游戏（一）-哔哩哔哩】 [https://b23.tv/XvDjaI1]("https://b23.tv/XvDjaI1")
+- 创建新的C++类继承自 UAuraGameplayAbility
+    -  ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-514965-783.png)
+- UAuraProjectileSpell 中，重写基类中 <font color=#FFAF38>**ActivateAbility**</font> 这个虚函数
+    - 头文件
+        -  ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-75614-580836.png)
+    - 源文件
+        -  ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-343261-406875.png)
+- 创建UAuraProjectileSpell的蓝图派生类 <font color=#40A8F5>***GA_FireBolt***</font>
+    -  ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-936274-277420.png)
+    -  ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-372015-236754.png)
+- 在角色 <font color=#40A8F5>***BP_Aura***</font> 中配置，才能生效
+    -  ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-979458-823078.png)
+- 此时测试结果， <font color=#DC2D1E>**蓝图先打印，C++后打印**</font> ![图片](./GAS 5.6 创建新的C++类继承自UAuraGameplayAbility重写ActivateAbility虚函数打印测试-幕布图片-227932-894669.png)

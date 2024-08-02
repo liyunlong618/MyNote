@@ -1,0 +1,12 @@
+# GAS 4.6 GameplayAbility中的Tag——技能互斥
+- <font color=#DC2D1E>**GameplayAbility的Tag互斥对照**</font>
+- GameplayAbility的Tag
+-  ![图片](./GAS 4.6 GameplayAbility中的Tag——技能互斥-幕布图片-430545-983024.png)
+-  ![图片](./GAS 4.6 GameplayAbility中的Tag——技能互斥-幕布图片-987985-624739.png)
+- 实例化策略
+    -  ![图片](./GAS 4.6 GameplayAbility中的Tag——技能互斥-幕布图片-300629-794101.png)
+    -  ![图片](./GAS 4.6 GameplayAbility中的Tag——技能互斥-幕布图片-113326-328858.png)
+- 网络执行策略
+    -  ![图片](./GAS 4.6 GameplayAbility中的Tag——技能互斥-幕布图片-687904-423988.png)
+- 不用的东西
+    - 复制策略 ![图片](./GAS 4.6 GameplayAbility中的Tag——技能互斥-幕布图片-796052-568561.png)

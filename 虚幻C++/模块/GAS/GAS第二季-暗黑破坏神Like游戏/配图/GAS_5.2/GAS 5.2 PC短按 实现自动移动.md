@@ -1,0 +1,18 @@
+# GAS 5.2 PC短按 实现自动移动
+- 视频链接
+    -  [https://www.bilibili.com/video/BV1JD421E7yC?p=104&vd_source=9e1e64122d802b4f7ab37bd325a89e6c]("https://www.bilibili.com/video/BV1JD421E7yC?p=104&vd_source=9e1e64122d802b4f7ab37bd325a89e6c")
+- 使用 **NaviMesh** 的 **API** 需要 **引模块** **"** <font color=#DC2D1E>**NavigationSystem**</font> **"**
+    - 需要引模块" <font color=#DC2D1E>**NavigationSystem**</font> " ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-113058-475192.png)
+- AAuraPlayerController 中
+    - <font color=#FFAF38>**AbilityInputTagReleased**</font> **函数中,**
+        - 如果不为左键点击tag，调用ASC组件的回调函数，然后return；若为左键点击时，if有目标，调用ASC组件的回调函数；没目标，这里才是需要处理的逻辑：
+        - 先拿到控制的角色，若点击时间小于等于 阈值 且 控制角色不为空时，先清空样条线的所有点，通过 <font color=#75C940>**NaviMesh**</font> 的API： <font color=#FFAF38>**UNavigationSystemV1::FindPathToLocationSynchronously**</font> 拿到 <font color=#75C940>**NaviMesh**</font> 的导航路径，路径结构体中有个 <font color=#75C940>**PathPoints**</font> 数组保存了路径点的信息，遍历一下为样条线添加点，生成debug球体，然后 `bAutoRunning=true` ；然后设置记录鼠标点击时间的变量为0.f，设置 `bTargeting=false`
+        -  ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-637612-886080.png)
+            - 需要引模块" <font color=#DC2D1E>**NavigationSystem**</font> " ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-711087-988406.png)
+- 小技巧：当你不知道一个函数的模块时，可以谷歌
+    -  ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-679958-782482.png)
+    -  ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-259772-140573.png)
+    - 会定位到官方文档，哈哈哈，所以还是需要在文档里面找 ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-193824-382242.png)
+- 加入导航网格体 <font color=#DC2D1E>**Nav Mesh Bounds Volume**</font>
+    -  ![图片](./GAS 5.2 PC短按 实现自动移动-幕布图片-273431-263758.png)
+- 我使用的是右键移动，此时短按右键，会Debug导航点,此时gif
