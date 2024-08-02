@@ -20,9 +20,13 @@ ________________________________________________________________________________
 	- [处理关键点：](#处理关键点)
 		- [属性 的 结构体介绍](#属性-的-结构体介绍)
 		- [设置属性UAuraAttributeSet](#设置属性uauraattributeset)
+
 				- [DOREPLIFETIME\_CONDITION\_NOTIFY 宏](#doreplifetime_condition_notify-宏)
+
 				- [GAMEPLAYATTRIBUTE\_REPNOTIFY宏](#gameplayattribute_repnotify宏)
+
 					- [GAS调试debug命令](#gas调试debug命令)
+
 		- [创建一个血瓶Actor](#创建一个血瓶actor)
 			- [AuraEffectActor](#auraeffectactor)
 			- [删除不用的Tick，并在构造中关掉Tick](#删除不用的tick并在构造中关掉tick)
