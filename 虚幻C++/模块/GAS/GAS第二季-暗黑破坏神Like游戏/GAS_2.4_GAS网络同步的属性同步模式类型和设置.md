@@ -17,8 +17,21 @@ ________________________________________________________________________________
 
 ___________________________________________________________________________________________
 
-[TOC]
-
+- [GAS 2.4 GAS网络同步的 属性同步模式 类型 和 设置](#gas-24-gas网络同步的-属性同步模式-类型-和-设置)
+  - [处理关键点：](#处理关键点)
+    - [\*\* Aura.Build.cs \*\*中导入模块](#-aurabuildcs-中导入模块)
+    - [创建c++类，分别继承自：PlayerState/AbilitySystemComponent组件/AttributeSet](#创建c类分别继承自playerstateabilitysystemcomponent组件attributeset)
+    - [\*\* AAuraCharacterBase \*\*中创建两个智能指针，保存ASC技能组件和AS属性组件（敌人用）](#-aauracharacterbase-中创建两个智能指针保存asc技能组件和as属性组件敌人用)
+    - [敌人类\*\* AAuraEnemy \*\*中创建 ASC技能组件 和 AS属性设置](#敌人类-aauraenemy-中创建-asc技能组件-和-as属性设置)
+    - [玩家Playerstate文件\*\* AAuraPlayerState \*\*中,创建 ASC技能组件 和 AS属性设置](#玩家playerstate文件-aauraplayerstate-中创建-asc技能组件-和-as属性设置)
+    - [GAS网络同步的属性同步模式](#gas网络同步的属性同步模式)
+    - [玩家PS\*\* AAuraPlayerState \*\*中,中设置属性网络同步模式](#玩家ps-aauraplayerstate-中中设置属性网络同步模式)
+    - [敌人基类\*\* AAuraEnemy \*\*构造中设置属性网络同步模式](#敌人基类-aauraenemy-构造中设置属性网络同步模式)
+    - [主角和敌人的ASC初始化：(多人模式下必须要做，单人可跳过这步)](#主角和敌人的asc初始化多人模式下必须要做单人可跳过这步)
+    - [敌人类\*\* AAuraEnemy \*\*中，重写BeginPlay，初始化ASC](#敌人类-aauraenemy-中重写beginplay初始化asc)
+    - [玩家角色类中\*\* AAuraCharacter \*\*中初始化并同步到所有客户端，需要重写几个函数](#玩家角色类中-aauracharacter-中初始化并同步到所有客户端需要重写几个函数)
+      - [OnRep\_PlayerState函数 来自AController](#onrep_playerstate函数-来自acontroller)
+    - [GM中设置PS](#gm中设置ps)
 ___________________________________________________________________________________________
 
 ### **<font color=yellow> Aura.Build.cs </font>**中导入模块
