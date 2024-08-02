@@ -142,7 +142,7 @@ public:
 &emsp;
 
 + `源文件`中：
-  + 这里 自己并没有写这些函数但是现在多出来 还可以用的原因是 用了上面的ATTRIBUTE_ACCESSORS宏
+  + 这里 自己并没有写这些函数但是现在多出来 还可以用的原因是 用了上面的宏[^1]
 ```cpp
 UAuraAttributeSet::UAuraAttributeSet()
 {
@@ -152,6 +152,9 @@ UAuraAttributeSet::UAuraAttributeSet()
 	InitMaxMana(250.0f);
 }
 ```
+
+[^1]:ATTRIBUTE_ACCESSORS(该属性所在的类,属性名);
+
 ![](https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS_2.5/11.png?raw=true)
 
 &emsp;
