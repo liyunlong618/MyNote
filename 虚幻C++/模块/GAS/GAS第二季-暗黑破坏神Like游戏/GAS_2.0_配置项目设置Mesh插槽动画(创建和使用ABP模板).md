@@ -45,13 +45,13 @@ https://pan.baidu.com/s/1xySQ1kbKUm5zyFfr_5r4mQ?pwd=6666
 
 ___________________________________________________________________________________________
 ### 参考3A制作规范 创建人物基类
-<img src=".\\配图\\GAS-2.0\\3.png" width="60%" height="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/1.png?raw=true" width="60%" height="60%">
 
 
 ___________________________________________________________________________________________
 
 ### 基类 <font color=yellow>AuraCharacterBase.h</font> 中 删除不用的Tick和关闭Tick(节约性能!!!)
-<img src=".\\配图\\GAS-2.0\\4.png" width="30%" height="30%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/4.png?raw=true" width="30%" height="30%">
 
 ```CPP
     //构造中关闭tick,节约开销
@@ -101,24 +101,24 @@ AAuraCharacterBase::AAuraCharacterBase()
 
 
 ### 创建敌人类文件夹
-<img src=".\\配图\\GAS-2.0\\8.png" width="60%" height="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/8.png?raw=true" width="60%" height="60%">
 
 ___________________________________________________________________________________________
 
 
 ### 创建角色，配置角色和武器Mesh
-<img src=".\\配图\\GAS-2.0\\9.png" width="50%" height="50%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/9.png?raw=true" width="50%" height="50%">
 
-<img src=".\\配图\\GAS-2.0\\10.png" width="100%" height="70%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/10.png?raw=true" width="100%">
 
 ___________________________________________________________________________________________
 
 
 ### 选择武器Mesh后无法挂载，因为没有插槽，需要添加插槽，并调整插槽位置
 
-<img src=".\\配图\\GAS-2.0\\11.png" width="60%" height="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/11.png?raw=true" width="60%" height="60%">
 
-<img src=".\\配图\\GAS-2.0\\12.png" width="60%" height="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/12.png?raw=true" width="60%" height="60%">
 
 ___________________________________________________________________________________________
 
@@ -127,67 +127,67 @@ ________________________________________________________________________________
 
 + 创建蓝图类继承自AuraEnemy
 
-<img src=".\\配图\\GAS-2.0\\13.png" width="60%" height="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/13.png?raw=true" width="60%" height="60%">
 
 + 设置敌人和武器的Mesh
 
-<img src=".\\配图\\GAS-2.0\\14.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/14.png?raw=true" width="100%" height="100%">
 
 + 也需要搞一个叫WeaponSocket的骨骼插槽(已经有了，原插槽改名就可以)
 
-<img src=".\\配图\\GAS-2.0\\15.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/15.png?raw=true" width="100%" height="100%">
 
 ___________________________________________________________________________________________
 
 ### 配置角色动画蓝图
 + 路径
 
-<img src=".\\配图\\GAS-2.0\\16.png" width="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/16.png?raw=true" width="60%">
 
 &emsp;
 
 + 创建动画状态机
 
-<img src=".\\配图\\GAS-2.0\\17.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/17.png?raw=true" width="100%" height="100%">
 
-<img src=".\\配图\\GAS-2.0\\18.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/18.png?raw=true" width="100%" height="100%">
 
-<img src=".\\配图\\GAS-2.0\\19.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/19.png?raw=true" width="100%" height="100%">
 
 &emsp;
 
 + 动画蓝图初始化时保存角色变量和移动组件
 
-<img src=".\\配图\\GAS-2.0\\20.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/20.png?raw=true" width="100%" height="100%">
 
 &emsp;
 
 + 获取Speed变量
 
-<img src=".\\配图\\GAS-2.0\\21.png" width="100%" height="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/21.png?raw=true" width="100%" height="100%">
 
 ___________________________________________________________________________________________
 
 ### 使用动画蓝图模板创建敌人的ABP
 + 创建角色动画蓝图模板
 
-<img src=".\\配图\\GAS-2.0\\22.png" width="80%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/22.png?raw=true" width="80%">
 
-<img src=".\\配图\\GAS-2.0\\23.png" width="30%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/23.png?raw=true" width="30%">
 
 &emsp;
 
 + 因为没有选骨骼，所以可以给很多不同骨骼的对象使用
 
-<img src=".\\配图\\GAS-2.0\\24.png" width="70%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/24.png?raw=true" width="70%">
 
-<img src=".\\配图\\GAS-2.0\\25.png" width="50%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/25.png?raw=true" width="50%">
 
 &emsp; 
 
 <font face="黑体" color=red size=5>关键操作！！！：通过混合空间播放器，后续可以在子类中调整播放混合空间</font>
 
-<img src=".\\配图\\GAS-2.0\\26.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/26.png?raw=true" width="100%">
 
 搞定！
 
@@ -197,45 +197,45 @@ ________________________________________________________________________________
 
 使用动画模板给敌人创建ABP
 
-<img src=".\\配图\\GAS-2.0\\27.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/27.png?raw=true" width="100%">
 
 &emsp;
 
 创建ABP
 
-<img src=".\\配图\\GAS-2.0\\28.png" width="60%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/28.png?raw=true" width="60%">
 
 &emsp;
 
 使用模板创建
 
-<img src=".\\配图\\GAS-2.0\\29.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/29.png?raw=true" width="100%">
 
 &emsp;
 在资产编辑器 给上动画
 
-<img src=".\\配图\\GAS-2.0\\30.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/30.png?raw=true" width="100%">
 
 &emsp;
 
 给BP配置ABP
 
-<img src=".\\配图\\GAS-2.0\\31.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/31.png?raw=true" width="100%">
 
 &emsp;
 
 
 参考上面的步骤，创建另一个敌人的ABP
 
-<img src=".\\配图\\GAS-2.0\\32.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/32.png?raw=true" width="100%">
 
-<img src=".\\配图\\GAS-2.0\\33.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/33.png?raw=true" width="100%">
 
-<img src=".\\配图\\GAS-2.0\\34.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/34.png?raw=true" width="100%">
 
-<img src=".\\配图\\GAS-2.0\\35.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/35.png?raw=true" width="100%">
 
-<img src=".\\配图\\GAS-2.0\\36.png" width="100%">
+<img src="https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS-2.0/36.png?raw=true" width="100%">
 
 &emsp;
 

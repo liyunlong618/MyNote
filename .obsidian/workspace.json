@@ -1,0 +1,194 @@
+{
+  "main": {
+    "id": "2626d67681b79b62",
+    "type": "split",
+    "children": [
+      {
+        "id": "dbb8e29d538359a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f5b95c9474c6e98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/!!!!!!!!!!!项目目录!!!!!!!!!!!.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5cedfeb5efef0457",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.4_GAS网络同步的属性同步模式类型和设置.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c8163c27af52cd7b",
+    "type": "split",
+    "children": [
+      {
+        "id": "daf22f660b178809",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6d6a9206dab07662",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6a518158ccf8321d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b72210be8889fc3f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d44461d6363a4b56",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b6b704ad34798b3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d8df2c391395b72c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.4_GAS网络同步的属性同步模式类型和设置.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "1be5829b234b9f14",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.4_GAS网络同步的属性同步模式类型和设置.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5f67ef12f77977c0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "dcf9361b8de69232",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.4_GAS网络同步的属性同步模式类型和设置.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "5cedfeb5efef0457",
+  "lastOpenFiles": [
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/9.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/8.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/7.gif",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/6.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/5.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/4.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/3.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/2.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/14.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/13.gif",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2/12.png",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.2",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.1",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.0",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS2.4",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS-2.4",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/!!!!!!!!!!!项目目录!!!!!!!!!!!.md",
+    "【使用Markdown】.md",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.1_配置增强输入;GM;玩家移动;转身速率.md",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/大纲梳理： 概念和联网 GA(GameplayAbilities).md",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.0_配置项目设置Mesh插槽动画(创建和使用ABP模板).md",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.2_通过接口实现描边效果.md",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS_2.4_GAS网络同步的属性同步模式类型和设置.md",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/大纲梳理： 概念和联网 GA(GameplayAbilities)",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS_2.4",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/配图/GAS_2.2",
+    "README.md",
+    "未命名.canvas",
+    "虚幻C++/模块/GAS/GAS第二季-暗黑破坏神Like游戏/GAS 2.1 配置增强输入;GM;玩家移动;转身速率.md"
+  ]
+}
