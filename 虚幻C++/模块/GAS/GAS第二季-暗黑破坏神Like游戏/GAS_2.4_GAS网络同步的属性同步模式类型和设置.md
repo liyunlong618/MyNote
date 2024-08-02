@@ -1,11 +1,11 @@
 ___________________________________________________________________________________________
-### [!!!!!!!!!!!项目根目录!!!!!!!!!!!](./!!!!!!!!!!!项目目录!!!!!!!!!!!.md)
+>[!!!!!!!!!!!返回项目根目录!!!!!!!!!!!](./!!!!!!!!!!!项目目录!!!!!!!!!!!.md)
 ___________________________________________________________________________________________
 # GAS 2.4 GAS网络同步的 属性同步模式 类型 和 设置
 
 ___________________________________________________________________________________________
 
-# <font color=red>处理关键点：</font>
+## <font color=red>处理关键点：</font>
 
 <font face="黑体" color=red size=3>1. 角色PS中创建ASC组件，角色通过PS持有ASC组件和AS组件 </font>
 
@@ -17,19 +17,7 @@ ________________________________________________________________________________
 
 ___________________________________________________________________________________________
 
-# <font color=orange> 目录 </font>
-
-1. [导入GAS需要的模块](#font-coloryellow-aurabuildcs-font中导入模块)
-2. [AAuraCharacterBase中创建两个智能指针，保存ASC技能组件和AS属性组件（敌人用）](#font-coloryellow-aauracharacterbase-font中创建两个智能指针保存asc技能组件和as属性组件敌人用)
-3. [敌人类AAuraEnemy中创建 ASC技能组件 和 AS属性设置](#敌人类font-coloryellow-aauraenemy-font中创建-asc技能组件-和-as属性设置)
-4. [玩家Playerstate文件AAuraPlayerState中,创建 ASC技能组件 和 AS属性设置](#玩家playerstate文件font-coloryellow-aauraplayerstate-font中创建-asc技能组件-和-as属性设置)
-5. [GAS网络同步的属性同步模式](#GAS网络同步的属性同步模式)
-6. [玩家AAuraPlayerState中,中设置属性网络同步模式](#玩家psfont-coloryellow-aauraplayerstate-font中中设置属性网络同步模式)
-7. [敌人基类AAuraEnemy构造中设置属性网络同步模式](#敌人基类font-coloryellow-aauraenemy-font构造中设置属性网络同步模式)
-8. [主角和敌人的ASC初始化：(多人模式下必须要做，单人可跳过这步)](#主角和敌人的asc初始化多人模式下必须要做单人可跳过这步)
-9. [敌人类AAuraEnemy中，重写BeginPlay，初始化ASC](#敌人类font-coloryellow-aauraenemy-font中重写beginplay初始化asc)
-10. [玩家角色类中AAuraCharacter中初始化并同步到所有客户端，需要重写几个函数](#玩家角色类中font-coloryellow-aauracharacter-font中初始化并同步到所有客户端需要重写几个函数)
-11. [GM中设置PS](#gm中设置ps)
+[TOC]
 
 ___________________________________________________________________________________________
 
@@ -43,7 +31,7 @@ ________________________________________________________________________________
 
 ![](https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS_2.4/1.png?raw=true)
 
-  ___________________________________________________________________________________________
+___________________________________________________________________________________________
 
 ### 创建c++类，分别继承自：PlayerState/AbilitySystemComponent组件/AttributeSet
 
@@ -51,17 +39,20 @@ ________________________________________________________________________________
   
   
   
+
 ![](https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS_2.4/2.png?raw=true)
-  
+
 - **<font color=yellow> AbilitySystemComponent </font>**组件
   
+
 ![](https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS_2.4/3.png?raw=true)
-  
+
 - **<font color=yellow> AttributeSet </font>**
   
+
 ![](https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS_2.4/4.png?raw=true)
-  
-  ___________________________________________________________________________________________
+
+___________________________________________________________________________________________
 
 ### **<font color=yellow> AAuraCharacterBase </font>**中创建两个智能指针，保存ASC技能组件和AS属性组件（敌人用）
 
@@ -362,6 +353,6 @@ ________________________________________________________________________________
   ![](https://github.com/liyunlong618/MyNote/blob/master/%E8%99%9A%E5%B9%BBC++/%E6%A8%A1%E5%9D%97/GAS/GAS%E7%AC%AC%E4%BA%8C%E5%AD%A3-%E6%9A%97%E9%BB%91%E7%A0%B4%E5%9D%8F%E7%A5%9ELike%E6%B8%B8%E6%88%8F/%E9%85%8D%E5%9B%BE/GAS_2.4/7.png?raw=true)
 ___________________________________________________________________________________________
 
-[返回最上面](#font-colororange-目录-font)
+[返回最上面](#处理关键点：)
 
 ___________________________________________________________________________________________
