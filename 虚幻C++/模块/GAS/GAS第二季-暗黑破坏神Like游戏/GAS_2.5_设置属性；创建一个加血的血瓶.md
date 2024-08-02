@@ -22,8 +22,6 @@ ________________________________________________________________________________
 		- [设置属性UAuraAttributeSet](#设置属性uauraattributeset)
 				- [DOREPLIFETIME\_CONDITION\_NOTIFY 宏](#doreplifetime_condition_notify-宏)
 				- [GAMEPLAYATTRIBUTE\_REPNOTIFY宏](#gameplayattribute_repnotify宏)
-					- [UAuraAttributeSet.h](#uauraattributeseth)
-					- [UAuraAttributeSet.cpp](#uauraattributesetcpp)
 					- [GAS调试debug命令](#gas调试debug命令)
 		- [创建一个血瓶Actor](#创建一个血瓶actor)
 			- [AuraEffectActor](#auraeffectactor)
@@ -32,7 +30,6 @@ ________________________________________________________________________________
 			- [创建蓝图类继承自AAuraEffectActor](#创建蓝图类继承自aauraeffectactor)
 				- [拖入场景](#拖入场景)
 				- [此阶段测试结果](#此阶段测试结果)
-				- [](#)
 			- [设置Mesh](#设置mesh)
 			- [改成加血/加血后Destroy](#改成加血加血后destroy)
 
