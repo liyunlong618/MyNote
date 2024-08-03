@@ -308,7 +308,10 @@ ________________________________________________________________________________
 
 ### 此时效果gif,说明已经绑定了UI效果
 
-![](https://github.com/liyunlong618/MyNote/blob/master/UECPP/Models/GAS/GAS2/Image/GAS_2.8/GAS_2.8_MuBu_175010_650368.gif?raw=true)
+![](https://raw.githubusercontent.com/liyunlong618/MyNote/blob/master/UECPP/Models/GAS/GAS2/Image/GAS_2.8/GAS_2.8_MuBu_175010_650368.gif?raw=true)
+
+![描述](用户名/仓库名/分支名/路径/文件名.gif)
+
 ___________________________________________________________________________________________
 ### 考试题：参考HP的部分,制作一下蓝的部分,要求捡血瓶以后,掉MP,同步UI
 
